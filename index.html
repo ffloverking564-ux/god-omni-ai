@@ -1,0 +1,534 @@
+<!-- ============================= -->
+<!-- GOD-OMNI AI | FULL PREMIUM SUBSCRIPTION SYSTEM -->
+<!-- ============================= -->
+
+<script>
+
+// ===================================
+// TERMINAL SYSTEM
+// ===================================
+
+const terminal =
+document.getElementById('terminal');
+
+function addLine(text){
+
+    terminal.innerHTML +=
+    `<div>> ${text}</div>`;
+
+    terminal.scrollTop =
+    terminal.scrollHeight;
+}
+
+// ===================================
+// AI VOICE ENGINE
+// ===================================
+
+function speak(text){
+
+    const speech =
+    new SpeechSynthesisUtterance(text);
+
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    speechSynthesis.speak(speech);
+}
+
+// ===================================
+// SUBSCRIPTION DATABASE
+// ===================================
+
+const subscriptionPlans = {
+
+    "VIP_999": {
+        level: "photo",
+        name: "VIP PHOTO PLAN",
+        price: "₹999",
+        features: [
+            "AI Images",
+            "Voice AI"
+        ]
+    },
+
+    "ULTRA_1999": {
+        level: "media",
+        name: "ULTRA MEDIA PLAN",
+        price: "₹1999",
+        features: [
+            "AI Images",
+            "AI Video",
+            "Voice AI"
+        ]
+    },
+
+    "KING_CODE_5999": {
+        level: "full",
+        name: "KING CODING PLAN",
+        price: "₹5999",
+        features: [
+            "AI Coding",
+            "AI Images",
+            "AI Video",
+            "Voice AI"
+        ]
+    }
+
+};
+
+// ===================================
+// UNLOCK FEATURES
+// ===================================
+
+function unlockFeatures(level){
+
+    document.querySelectorAll('.feature-card')
+    .forEach(card => {
+
+        const title =
+        card.querySelector('h3').innerText;
+
+        // RESET
+        card.classList.add('locked');
+        card.classList.remove('unlocked');
+
+        // FULL ACCESS
+        if(level === "full"){
+
+            card.classList.remove('locked');
+            card.classList.add('unlocked');
+
+        }
+
+        // MEDIA ACCESS
+        else if(level === "media"){
+
+            if(
+                title === "AI Images"
+                ||
+                title === "AI Video"
+                ||
+                title === "Voice AI"
+            ){
+
+                card.classList.remove('locked');
+                card.classList.add('unlocked');
+
+            }
+
+        }
+
+        // PHOTO ACCESS
+        else if(level === "photo"){
+
+            if(
+                title === "AI Images"
+                ||
+                title === "Voice AI"
+            ){
+
+                card.classList.remove('locked');
+                card.classList.add('unlocked');
+
+            }
+
+        }
+
+    });
+
+    localStorage.setItem(
+        "userPlan",
+        level
+    );
+
+    addLine(
+        "SUBSCRIPTION ACTIVATED: "
+        + level.toUpperCase()
+    );
+
+}
+
+// ===================================
+// VERIFY SUBSCRIPTION
+// ===================================
+
+function verifySubscription(key){
+
+    if(subscriptionPlans[key]){
+
+        const plan =
+        subscriptionPlans[key];
+
+        unlockFeatures(plan.level);
+
+        alert(
+            "SUCCESS: "
+            + plan.name
+            + " ACTIVATED"
+        );
+
+        speak(
+            plan.name
+            + " activated successfully"
+        );
+
+        addLine(
+            "ACTIVE PLAN: "
+            + plan.name
+        );
+
+    }
+
+    else{
+
+        alert(
+            "INVALID SUBSCRIPTION KEY"
+        );
+
+        speak(
+            "Invalid subscription key"
+        );
+
+        addLine(
+            "ACCESS DENIED"
+        );
+
+    }
+
+}
+
+// ===================================
+// ADMIN ACCESS
+// ===================================
+
+document.getElementById('masterBtn')
+.onclick = () => {
+
+    const key =
+    prompt(
+        "Enter Admin Key or Subscription Key"
+    );
+
+    // MASTER ACCESS
+
+    if(
+        key === "GOD_OMNI_MASTER"
+    ){
+
+        unlockFeatures("full");
+
+        alert(
+            "MASTER ACCESS GRANTED"
+        );
+
+        speak(
+            "Welcome back admin"
+        );
+
+        addLine(
+            "ADMIN ACCESS ENABLED"
+        );
+
+    }
+
+    // USER SUBSCRIPTION
+
+    else{
+
+        verifySubscription(key);
+
+    }
+
+};
+
+// ===================================
+// PREMIUM POPUP
+// ===================================
+
+function showPlans(){
+
+    const key = prompt(
+
+`👑 GOD-OMNI PREMIUM 👑
+
+1️⃣ VIP PHOTO PLAN
+₹999 / Month
+KEY = VIP_999
+
+2️⃣ ULTRA MEDIA PLAN
+₹1999 / Month
+KEY = ULTRA_1999
+
+3️⃣ KING CODING PLAN
+₹5999 / Month
+KEY = KING_CODE_5999
+
+💳 PAYMENT UPI:
+loverking8919@oksbi
+
+Enter Your Activation Key:`
+
+    );
+
+    if(key){
+
+        verifySubscription(key);
+
+    }
+
+}
+
+// ===================================
+// FEATURE CLICK CHECK
+// ===================================
+
+document.querySelectorAll('.feature-card')
+.forEach(card => {
+
+    card.onclick = () => {
+
+        if(
+            card.classList.contains(
+                'locked'
+            )
+        ){
+
+            showPlans();
+
+        }
+
+        else{
+
+            const featureName =
+            card.querySelector('h3')
+            .innerText;
+
+            addLine(
+                featureName
+                + " READY TO USE"
+            );
+
+            speak(
+                featureName
+                + " activated"
+            );
+
+        }
+
+    };
+
+});
+
+// ===================================
+// VOICE INPUT SYSTEM
+// ===================================
+
+document.getElementById('voiceBtn')
+.onclick = () => {
+
+    if(
+        'webkitSpeechRecognition'
+        in window
+    ){
+
+        const recognition =
+        new webkitSpeechRecognition();
+
+        recognition.lang = 'en-US';
+
+        recognition.start();
+
+        addLine(
+            "VOICE LISTENING STARTED..."
+        );
+
+        recognition.onresult =
+        function(event){
+
+            const text =
+            event.results[0][0]
+            .transcript;
+
+            document.getElementById(
+                'chatInput'
+            ).value = text;
+
+            addLine(
+                "VOICE: " + text
+            );
+
+            speak(
+                "You said " + text
+            );
+
+        };
+
+    }
+
+    else{
+
+        alert(
+            "VOICE RECOGNITION NOT SUPPORTED"
+        );
+
+    }
+
+};
+
+// ===================================
+// CHAT AI SYSTEM
+// ===================================
+
+document.getElementById('chatInput')
+.addEventListener(
+'keypress',
+function(e){
+
+    if(e.key === 'Enter'){
+
+        const msg = this.value;
+
+        addLine(
+            "USER: " + msg
+        );
+
+        addLine(
+            "AI: Processing request..."
+        );
+
+        speak(
+            "Processing your request"
+        );
+
+        this.value = '';
+
+    }
+
+});
+
+// ===================================
+// SECURITY SYSTEM
+// ===================================
+
+window.addEventListener(
+'contextmenu',
+e => e.preventDefault()
+);
+
+window.addEventListener(
+'keydown',
+e => {
+
+    if(
+        e.key === 'F12'
+        ||
+        (
+            e.ctrlKey
+            &&
+            e.shiftKey
+            &&
+            e.key === 'I'
+        )
+    ){
+
+        e.preventDefault();
+
+        addLine(
+            "SECURITY WARNING: DEVTOOLS BLOCKED."
+        );
+
+    }
+
+});
+
+// ===================================
+// MICROPHONE RECORDING
+// ===================================
+
+let mediaRecorder;
+
+async function startRecording(){
+
+    try{
+
+        const stream =
+        await navigator.mediaDevices
+        .getUserMedia({
+            audio:true
+        });
+
+        mediaRecorder =
+        new MediaRecorder(stream);
+
+        mediaRecorder.start();
+
+        addLine(
+            "SECURITY RECORDING ACTIVE."
+        );
+
+    }
+
+    catch(err){
+
+        addLine(
+            "MICROPHONE ACCESS DENIED."
+        );
+
+    }
+
+}
+
+// ===================================
+// AUTO LOAD SAVED PLAN
+// ===================================
+
+window.addEventListener(
+'load',
+() => {
+
+    const savedPlan =
+    localStorage.getItem(
+        'userPlan'
+    );
+
+    if(savedPlan){
+
+        unlockFeatures(
+            savedPlan
+        );
+
+    }
+
+    addLine(
+        "SYSTEM ONLINE..."
+    );
+
+    addLine(
+        "VOICE ENGINE READY..."
+    );
+
+    addLine(
+        "SECURITY CORE ACTIVE..."
+    );
+
+});
+
+// ===================================
+// AUTO REPAIR SYSTEM
+// ===================================
+
+setInterval(() => {
+
+    if(
+        !document.getElementById(
+            'terminal'
+        )
+    ){
+
+        location.reload();
+
+    }
+
+},3000);
+
+</script>
