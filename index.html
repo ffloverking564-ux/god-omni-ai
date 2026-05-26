@@ -52,154 +52,117 @@ body{
 
 <body class="p-6">
 
-<!-- PREMIUM HEADER START -->
+<!-- ========================= -->
+<!-- GOD-OMNI AI ULTRA HEADER -->
+<!-- ========================= -->
 
-<header class="glass rounded-3xl p-6 mb-8 border border-gray-800 shadow-2xl">
+<header class="relative overflow-hidden rounded-[40px] p-8 mb-10 glass border border-purple-500/20">
 
-<div class="flex flex-col items-center text-center">
+<!-- BACKGROUND GLOW -->
+
+<div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-pink-500/10"></div>
+
+<div class="absolute w-96 h-96 bg-purple-500/20 blur-[120px] rounded-full -top-20 -left-20"></div>
+
+<div class="absolute w-80 h-80 bg-blue-500/20 blur-[120px] rounded-full bottom-0 right-0"></div>
+
+<!-- MAIN CONTENT -->
+
+<div class="relative z-10 flex flex-col items-center text-center">
 
 <!-- LOGO -->
 
-<div class="relative mb-5">
+<div class="relative mb-8">
 
-<div class="w-32 h-32 rounded-full
-bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500
-flex items-center justify-center
-shadow-[0_0_40px_rgba(168,85,247,0.8)] animate-pulse">
+<img
+src="./logo.png"
+alt="GOD-OMNI AI"
+class="w-72 md:w-80 animateLogo select-none"
+/>
 
-<div class="w-24 h-24 rounded-full bg-black flex items-center justify-center">
-
-<i class="fa-solid fa-eye text-5xl text-cyan-400"></i>
-
-</div>
-
-</div>
-
-<div class="absolute -top-5 left-1/2 -translate-x-1/2">
-
-<i class="fa-solid fa-bolt text-yellow-400 text-4xl drop-shadow-[0_0_15px_gold]"></i>
-
-</div>
+<div class="absolute inset-0 rounded-full border border-purple-400/30 animate-spin-slow"></div>
 
 </div>
 
 <!-- TITLE -->
 
-<h1 class="text-5xl font-black tracking-widest">
+<h1 class="text-6xl md:text-8xl font-black leading-none tracking-wide">
 
-<span class="text-white">GOD-OMNI</span>
+<span class="text-white">
+GOD-OMNI
+</span>
 
-<span class="text-yellow-400"> AI</span>
+<span class="text-yellow-400">
+AI
+</span>
 
 </h1>
 
-<!-- TAGLINE -->
+<!-- PREMIUM TEXT -->
 
-<h2 class="mt-3 text-xl font-bold
-bg-gradient-to-r from-yellow-300 to-orange-500
-bg-clip-text text-transparent tracking-[4px]">
+<h2 class="mt-5 text-yellow-300 text-xl md:text-3xl tracking-[12px] font-bold uppercase">
 
-KING OMNIVERSE CORE
+OMNIPOTENT INTELLIGENCE
 
 </h2>
 
-<p class="text-gray-400 mt-3 text-sm max-w-md">
+<!-- DESCRIPTION -->
+
+<p class="mt-5 text-gray-400 text-lg md:text-xl max-w-2xl">
 
 Ultimate Premium Artificial Intelligence Engine
 
 </p>
 
-<!-- STATUS -->
+<!-- STATUS BUTTONS -->
 
-<div class="flex gap-4 mt-6 flex-wrap justify-center">
+<div class="flex flex-col gap-5 mt-10 w-full items-center">
 
-<div class="px-5 py-2 rounded-full
-bg-green-500/20 border border-green-500
-text-green-400 font-bold shadow-lg">
+<div class="w-72 py-4 rounded-2xl bg-green-500/10 border border-green-400 text-green-300 text-2xl font-bold shadow-[0_0_30px_rgba(34,197,94,0.3)]">
 
-AI ACTIVE
+⚡ AI ACTIVE
 
 </div>
 
-<div class="px-5 py-2 rounded-full
-bg-blue-500/20 border border-blue-500
-text-blue-400 font-bold shadow-lg">
+<div class="w-72 py-4 rounded-2xl bg-blue-500/10 border border-blue-400 text-blue-300 text-2xl font-bold shadow-[0_0_30px_rgba(59,130,246,0.3)]">
 
-VOICE READY
+🎤 VOICE READY
 
 </div>
 
-<div class="px-5 py-2 rounded-full
-bg-purple-500/20 border border-purple-500
-text-purple-400 font-bold shadow-lg">
+<div class="w-72 py-4 rounded-2xl bg-purple-500/10 border border-purple-400 text-purple-300 text-2xl font-bold shadow-[0_0_30px_rgba(168,85,247,0.3)]">
 
-SYSTEM ONLINE
+👁 SYSTEM ONLINE
 
 </div>
 
 </div>
-
-<!-- YOUTUBE BUTTON -->
-
-<a href="https://www.youtube.com/@FFLOVERKING33"
-target="_blank"
-class="mt-8 w-full max-w-md">
-
-<div class="rounded-3xl p-5
-bg-gradient-to-r from-red-900/40 to-pink-900/40
-border border-red-500/30
-hover:scale-105 transition duration-300
-shadow-[0_0_35px_rgba(239,68,68,0.3)]">
-
-<div class="flex flex-col items-center">
-
-<i class="fa-brands fa-youtube text-6xl text-red-500 mb-3"></i>
-
-<h3 class="text-3xl font-black text-red-300">
-
-FF LOVER KING 33
-
-</h3>
-
-<p class="text-red-200 mt-2 font-semibold">
-
-SUBSCRIBE NOW
-
-</p>
-
-</div>
-
-</div>
-
-</a>
 
 <!-- BUTTONS -->
 
-<div class="flex gap-5 mt-8 flex-wrap justify-center">
+<div class="flex flex-wrap justify-center gap-5 mt-10">
 
 <button id="voiceBtn"
-class="px-10 py-4 rounded-2xl
-bg-gradient-to-r from-green-400 to-emerald-500
-text-black font-black text-2xl
-shadow-[0_0_25px_rgba(34,197,94,0.6)]
-hover:scale-105 transition">
+class="px-10 py-4 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 text-black font-black text-xl hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(34,197,94,0.5)]">
 
-<i class="fa-solid fa-microphone"></i>
-Voice
+🎤 Voice
 
 </button>
 
 <button id="masterBtn"
-class="px-10 py-4 rounded-2xl
-bg-gradient-to-r from-yellow-300 to-yellow-500
-text-black font-black text-2xl
-shadow-[0_0_25px_rgba(250,204,21,0.7)]
-hover:scale-105 transition">
+class="px-10 py-4 rounded-2xl bg-gradient-to-r from-yellow-300 to-amber-500 text-black font-black text-xl hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(250,204,21,0.5)]">
 
-<i class="fa-solid fa-key"></i>
-Access
+🔑 Access
 
 </button>
+
+<a href="https://www.youtube.com/@FFLOVERKING33"
+target="_blank"
+class="px-10 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-pink-600 text-white font-black text-xl hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(239,68,68,0.5)]">
+
+▶ YouTube
+
+</a>
 
 </div>
 
@@ -207,7 +170,65 @@ Access
 
 </header>
 
-<!-- PREMIUM HEADER END -->
+<!-- ========================= -->
+<!-- ULTRA CSS -->
+<!-- ========================= -->
+
+<style>
+
+.glass{
+background:rgba(10,15,30,0.75);
+backdrop-filter:blur(18px);
+box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+.animateLogo{
+animation:logoFloat 4s ease-in-out infinite;
+filter:drop-shadow(0 0 35px rgba(168,85,247,0.8));
+}
+
+@keyframes logoFloat{
+
+0%{
+transform:translateY(0px) scale(1);
+}
+
+50%{
+transform:translateY(-10px) scale(1.03);
+}
+
+100%{
+transform:translateY(0px) scale(1);
+}
+
+}
+
+.animate-spin-slow{
+animation:spinSlow 18s linear infinite;
+}
+
+@keyframes spinSlow{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+body{
+background:#020617;
+overflow-x:hidden;
+font-family:sans-serif;
+}
+
+</style> 
+    
+          _________ >  HEADEAR END < _________________
+    
 
 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
 
