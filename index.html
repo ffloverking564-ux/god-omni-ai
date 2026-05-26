@@ -1,544 +1,515 @@
 <!DOCTYPE html>
-<html>
-<body style="background:#000; color:#0f0; font-family:monospace; padding:20px;">
-<div id="terminal">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOD-OMNI AI | ULTIMATE ENGINE</title>
 
-<!-- ============================= -->
-<!-- GOD-OMNI AI | FULL PREMIUM SUBSCRIPTION SYSTEM -->
-<!-- ============================= -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+body{
+    background:#050816;
+    color:white;
+    font-family:sans-serif;
+    overflow-x:hidden;
+}
+
+.glass{
+    background:rgba(17,24,39,0.75);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.locked{
+    filter:grayscale(1) blur(3px);
+    opacity:0.6;
+}
+
+.unlocked{
+    border:1px solid #22c55e;
+    box-shadow:0 0 20px rgba(34,197,94,0.4);
+}
+
+.feature-card{
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.feature-card:hover{
+    transform:translateY(-5px);
+}
+
+.terminal{
+    background:#000;
+    border:1px solid #222;
+    font-family:monospace;
+}
+</style>
+</head>
+
+<body class="p-6">
+
+<header class="glass rounded-2xl p-6 flex justify-between items-center mb-8">
+
+<div>
+<h1 class="text-3xl font-black">
+GOD-OMNI <span class="text-yellow-400">AI</span>
+</h1>
+
+<p class="text-gray-400 text-sm">
+Ultimate Premium AI Engine
+</p>
+</div>
+
+<div class="flex gap-3">
+
+<button id="voiceBtn"
+class="bg-green-500 text-black px-5 py-2 rounded-xl font-bold">
+<i class="fa-solid fa-microphone"></i>
+Voice
+</button>
+
+<button id="masterBtn"
+class="bg-yellow-400 text-black px-5 py-2 rounded-xl font-bold">
+<i class="fa-solid fa-key"></i>
+Access
+</button>
+
+</div>
+
+</header>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+
+<div class="feature-card locked glass p-6 rounded-3xl">
+<i class="fa-solid fa-code text-blue-400 text-3xl mb-3"></i>
+<h3 class="font-bold text-xl">AI Coding</h3>
+<p class="text-gray-400 text-sm mt-2">
+Unlimited Coding System
+</p>
+</div>
+
+<div class="feature-card locked glass p-6 rounded-3xl">
+<i class="fa-solid fa-image text-pink-400 text-3xl mb-3"></i>
+<h3 class="font-bold text-xl">AI Images</h3>
+<p class="text-gray-400 text-sm mt-2">
+AI Poster Generator
+</p>
+</div>
+
+<div class="feature-card locked glass p-6 rounded-3xl">
+<i class="fa-solid fa-video text-green-400 text-3xl mb-3"></i>
+<h3 class="font-bold text-xl">AI Video</h3>
+<p class="text-gray-400 text-sm mt-2">
+Cinematic Video Engine
+</p>
+</div>
+
+<div class="feature-card locked glass p-6 rounded-3xl">
+<i class="fa-solid fa-microphone text-orange-400 text-3xl mb-3"></i>
+<h3 class="font-bold text-xl">Voice AI</h3>
+<p class="text-gray-400 text-sm mt-2">
+Speech Recognition Engine
+</p>
+</div>
+
+</div>
+
+<div id="terminal"
+class="terminal rounded-3xl p-5 h-72 overflow-y-auto text-green-400 mb-5">
+
+<div>> GOD-OMNI SYSTEM INITIALIZED...</div>
+
+</div>
+
+<input
+id="chatInput"
+class="w-full bg-gray-900 p-4 rounded-2xl border border-gray-700 outline-none"
+placeholder="Ask GOD-OMNI AI..." />
 
 <script>
 
-// ===================================
-// TERMINAL SYSTEM
-// ===================================
+// TERMINAL
 
 const terminal =
 document.getElementById('terminal');
 
 function addLine(text){
 
-    terminal.innerHTML +=
-    `<div>> ${text}</div>`;
+terminal.innerHTML +=
+`<div>> ${text}</div>`;
 
-    terminal.scrollTop =
-    terminal.scrollHeight;
+terminal.scrollTop =
+terminal.scrollHeight;
+
 }
 
-// ===================================
-// AI VOICE ENGINE
-// ===================================
+// AI VOICE
 
 function speak(text){
 
-    const speech =
-    new SpeechSynthesisUtterance(text);
+const speech =
+new SpeechSynthesisUtterance(text);
 
-    speech.rate = 1;
-    speech.pitch = 1;
+speech.rate = 1;
+speech.pitch = 1;
 
-    speechSynthesis.speak(speech);
+speechSynthesis.speak(speech);
+
 }
 
-// ===================================
 // SUBSCRIPTION DATABASE
-// ===================================
 
 const subscriptionPlans = {
 
-    "VIP_999": {
-        level: "photo",
-        name: "VIP PHOTO PLAN",
-        price: "₹999",
-        features: [
-            "AI Images",
-            "Voice AI"
-        ]
-    },
+"VIP_999":{
+level:"photo",
+name:"VIP PHOTO PLAN"
+},
 
-    "ULTRA_1999": {
-        level: "media",
-        name: "ULTRA MEDIA PLAN",
-        price: "₹1999",
-        features: [
-            "AI Images",
-            "AI Video",
-            "Voice AI"
-        ]
-    },
+"ULTRA_1999":{
+level:"media",
+name:"ULTRA MEDIA PLAN"
+},
 
-    "KING_CODE_5999": {
-        level: "full",
-        name: "KING CODING PLAN",
-        price: "₹5999",
-        features: [
-            "AI Coding",
-            "AI Images",
-            "AI Video",
-            "Voice AI"
-        ]
-    }
+"KING_CODE_5999":{
+level:"full",
+name:"KING CODING PLAN"
+}
 
 };
 
-// ===================================
 // UNLOCK FEATURES
-// ===================================
 
 function unlockFeatures(level){
 
-    document.querySelectorAll('.feature-card')
-    .forEach(card => {
+document.querySelectorAll('.feature-card')
+.forEach(card=>{
 
-        const title =
-        card.querySelector('h3').innerText;
+const title =
+card.querySelector('h3').innerText;
 
-        // RESET
-        card.classList.add('locked');
-        card.classList.remove('unlocked');
+card.classList.add('locked');
+card.classList.remove('unlocked');
 
-        // FULL ACCESS
-        if(level === "full"){
+if(level==="full"){
 
-            card.classList.remove('locked');
-            card.classList.add('unlocked');
-
-        }
-
-        // MEDIA ACCESS
-        else if(level === "media"){
-
-            if(
-                title === "AI Images"
-                ||
-                title === "AI Video"
-                ||
-                title === "Voice AI"
-            ){
-
-                card.classList.remove('locked');
-                card.classList.add('unlocked');
-
-            }
-
-        }
-
-        // PHOTO ACCESS
-        else if(level === "photo"){
-
-            if(
-                title === "AI Images"
-                ||
-                title === "Voice AI"
-            ){
-
-                card.classList.remove('locked');
-                card.classList.add('unlocked');
-
-            }
-
-        }
-
-    });
-
-    localStorage.setItem(
-        "userPlan",
-        level
-    );
-
-    addLine(
-        "SUBSCRIPTION ACTIVATED: "
-        + level.toUpperCase()
-    );
+card.classList.remove('locked');
+card.classList.add('unlocked');
 
 }
 
-// ===================================
+else if(level==="media"){
+
+if(
+title==="AI Images"
+||
+title==="AI Video"
+||
+title==="Voice AI"
+){
+
+card.classList.remove('locked');
+card.classList.add('unlocked');
+
+}
+
+}
+
+else if(level==="photo"){
+
+if(
+title==="AI Images"
+||
+title==="Voice AI"
+){
+
+card.classList.remove('locked');
+card.classList.add('unlocked');
+
+}
+
+}
+
+});
+
+localStorage.setItem(
+'userPlan',
+level
+);
+
+addLine(
+"SUBSCRIPTION ACTIVATED: "
++ level.toUpperCase()
+);
+
+}
+
 // VERIFY SUBSCRIPTION
-// ===================================
 
 function verifySubscription(key){
 
-    if(subscriptionPlans[key]){
+if(subscriptionPlans[key]){
 
-        const plan =
-        subscriptionPlans[key];
+const plan =
+subscriptionPlans[key];
 
-        unlockFeatures(plan.level);
+unlockFeatures(plan.level);
 
-        alert(
-            "SUCCESS: "
-            + plan.name
-            + " ACTIVATED"
-        );
+alert(
+plan.name + " ACTIVATED"
+);
 
-        speak(
-            plan.name
-            + " activated successfully"
-        );
+speak(
+plan.name + " activated"
+);
 
-        addLine(
-            "ACTIVE PLAN: "
-            + plan.name
-        );
-
-    }
-
-    else{
-
-        alert(
-            "INVALID SUBSCRIPTION KEY"
-        );
-
-        speak(
-            "Invalid subscription key"
-        );
-
-        addLine(
-            "ACCESS DENIED"
-        );
-
-    }
+addLine(
+"ACTIVE PLAN: "
++ plan.name
+);
 
 }
 
-// ===================================
-// ADMIN ACCESS
-// ===================================
+else{
+
+alert("INVALID KEY");
+
+addLine("ACCESS DENIED");
+
+speak("Invalid key");
+
+}
+
+}
+
+// ACCESS BUTTON
 
 document.getElementById('masterBtn')
 .onclick = () => {
 
-    const key =
-    prompt(
-        "Enter Admin Key or Subscription Key"
-    );
+const key =
+prompt(
+"Enter Admin or Subscription Key"
+);
 
-    // MASTER ACCESS
+if(key==="GOD_OMNI_MASTER"){
 
-    if(
-        key === "GOD_OMNI_MASTER"
-    ){
+unlockFeatures("full");
 
-        unlockFeatures("full");
+alert("MASTER ACCESS");
 
-        alert(
-            "MASTER ACCESS GRANTED"
-        );
+speak("Welcome back admin");
 
-        speak(
-            "Welcome back admin"
-        );
-
-        addLine(
-            "ADMIN ACCESS ENABLED"
-        );
-
-    }
-
-    // USER SUBSCRIPTION
-
-    else{
-
-        verifySubscription(key);
-
-    }
-
-};
-
-// ===================================
-// PREMIUM POPUP
-// ===================================
-
-function showPlans(){
-
-    const key = prompt(
-
-`👑 GOD-OMNI PREMIUM 👑
-
-1️⃣ VIP PHOTO PLAN
-₹999 / Month
-KEY = VIP_999
-
-2️⃣ ULTRA MEDIA PLAN
-₹1999 / Month
-KEY = ULTRA_1999
-
-3️⃣ KING CODING PLAN
-₹5999 / Month
-KEY = KING_CODE_5999
-
-💳 PAYMENT UPI:
-loverking8919@oksbi
-
-Enter Your Activation Key:`
-
-    );
-
-    if(key){
-
-        verifySubscription(key);
-
-    }
+addLine("ADMIN ACCESS ENABLED");
 
 }
 
-// ===================================
-// FEATURE CLICK CHECK
-// ===================================
+else{
+
+verifySubscription(key);
+
+}
+
+};
+
+// FEATURE CLICK
 
 document.querySelectorAll('.feature-card')
-.forEach(card => {
+.forEach(card=>{
 
-    card.onclick = () => {
+card.onclick = () => {
 
-        if(
-            card.classList.contains(
-                'locked'
-            )
-        ){
+if(card.classList.contains('locked')){
 
-            showPlans();
+const key = prompt(
 
-        }
+"👑 GOD-OMNI PREMIUM 👑\n\n"
++
+"VIP PHOTO = VIP_999\n"
++
+"ULTRA MEDIA = ULTRA_1999\n"
++
+"KING CODING = KING_CODE_5999\n\n"
++
+"UPI: loverking8919@oksbi\n\n"
++
+"Enter Key:"
 
-        else{
+);
 
-            const featureName =
-            card.querySelector('h3')
-            .innerText;
+verifySubscription(key);
 
-            addLine(
-                featureName
-                + " READY TO USE"
-            );
+}
 
-            speak(
-                featureName
-                + " activated"
-            );
+else{
 
-        }
+const feature =
+card.querySelector('h3').innerText;
 
-    };
+addLine(feature + " READY");
+
+speak(feature + " ready");
+
+}
+
+};
 
 });
 
-// ===================================
-// VOICE INPUT SYSTEM
-// ===================================
+// CHAT SYSTEM
+
+document.getElementById('chatInput')
+.addEventListener('keypress',function(e){
+
+if(e.key==='Enter'){
+
+const msg = this.value;
+
+addLine("USER: " + msg);
+
+addLine("AI: Processing request...");
+
+speak("Processing your request");
+
+this.value='';
+
+}
+
+});
+
+// VOICE INPUT
 
 document.getElementById('voiceBtn')
 .onclick = () => {
 
-    if(
-        'webkitSpeechRecognition'
-        in window
-    ){
+if('webkitSpeechRecognition' in window){
 
-        const recognition =
-        new webkitSpeechRecognition();
+const recognition =
+new webkitSpeechRecognition();
 
-        recognition.lang = 'en-US';
+recognition.lang='en-US';
 
-        recognition.start();
+recognition.start();
 
-        addLine(
-            "VOICE LISTENING STARTED..."
-        );
+addLine("VOICE LISTENING STARTED");
 
-        recognition.onresult =
-        function(event){
+recognition.onresult =
+function(event){
 
-            const text =
-            event.results[0][0]
-            .transcript;
+const text =
+event.results[0][0].transcript;
 
-            document.getElementById(
-                'chatInput'
-            ).value = text;
+document.getElementById(
+'chatInput'
+).value = text;
 
-            addLine(
-                "VOICE: " + text
-            );
+addLine("VOICE: " + text);
 
-            speak(
-                "You said " + text
-            );
-
-        };
-
-    }
-
-    else{
-
-        alert(
-            "VOICE RECOGNITION NOT SUPPORTED"
-        );
-
-    }
+speak("You said " + text);
 
 };
 
-// ===================================
-// CHAT AI SYSTEM
-// ===================================
+}
 
-document.getElementById('chatInput')
-.addEventListener(
-'keypress',
-function(e){
+else{
 
-    if(e.key === 'Enter'){
+alert(
+"VOICE NOT SUPPORTED"
+);
 
-        const msg = this.value;
+}
 
-        addLine(
-            "USER: " + msg
-        );
+};
 
-        addLine(
-            "AI: Processing request..."
-        );
-
-        speak(
-            "Processing your request"
-        );
-
-        this.value = '';
-
-    }
-
-});
-
-// ===================================
-// SECURITY SYSTEM
-// ===================================
+// SECURITY
 
 window.addEventListener(
 'contextmenu',
-e => e.preventDefault()
+e=>e.preventDefault()
 );
 
 window.addEventListener(
 'keydown',
-e => {
+e=>{
 
-    if(
-        e.key === 'F12'
-        ||
-        (
-            e.ctrlKey
-            &&
-            e.shiftKey
-            &&
-            e.key === 'I'
-        )
-    ){
+if(
+e.key==='F12'
+||
+(
+e.ctrlKey
+&&
+e.shiftKey
+&&
+e.key==='I'
+)
+){
 
-        e.preventDefault();
+e.preventDefault();
 
-        addLine(
-            "SECURITY WARNING: DEVTOOLS BLOCKED."
-        );
-
-    }
-
-});
-
-// ===================================
-// MICROPHONE RECORDING
-// ===================================
-
-let mediaRecorder;
-
-async function startRecording(){
-
-    try{
-
-        const stream =
-        await navigator.mediaDevices
-        .getUserMedia({
-            audio:true
-        });
-
-        mediaRecorder =
-        new MediaRecorder(stream);
-
-        mediaRecorder.start();
-
-        addLine(
-            "SECURITY RECORDING ACTIVE."
-        );
-
-    }
-
-    catch(err){
-
-        addLine(
-            "MICROPHONE ACCESS DENIED."
-        );
-
-    }
+addLine(
+"SECURITY WARNING"
+);
 
 }
 
-// ===================================
-// AUTO LOAD SAVED PLAN
-// ===================================
-
-window.addEventListener(
-'load',
-() => {
-
-    const savedPlan =
-    localStorage.getItem(
-        'userPlan'
-    );
-
-    if(savedPlan){
-
-        unlockFeatures(
-            savedPlan
-        );
-
-    }
-
-    addLine(
-        "SYSTEM ONLINE..."
-    );
-
-    addLine(
-        "VOICE ENGINE READY..."
-    );
-
-    addLine(
-        "SECURITY CORE ACTIVE..."
-    );
-
 });
 
-// ===================================
-// AUTO REPAIR SYSTEM
-// ===================================
+// LOAD SYSTEM
 
-setInterval(() => {
+window.onload = () => {
 
-    if(
-        !document.getElementById(
-            'terminal'
-        )
-    ){
+const savedPlan =
+localStorage.getItem('userPlan');
 
-        location.reload();
+if(savedPlan){
 
+unlockFeatures(savedPlan);
+
+}
+// AI MIND CORE
+function getAIResponse(input) {
+    const msg = input.toLowerCase();
+    
+    if (msg.includes("hello") || msg.includes("hi")) {
+        return "Hello! I am GOD-OMNI AI. How can I help you today?";
+    } else if (msg.includes("who are you")) {
+        return "I am GOD-OMNI AI, the ultimate premium intelligence engine.";
+    } else if (msg.includes("time")) {
+        return "The current time is " + new Date().toLocaleTimeString();
+    } else {
+        return "I am processing your command. I am currently evolving to serve you better.";
     }
+}
 
-},3000);
+// UPDATE CHAT SYSTEM TO USE MIND
+document.getElementById('chatInput')
+.addEventListener('keypress', function(e){
+    if(e.key === 'Enter'){
+        const msg = this.value;
+        addLine("USER: " + msg);
+        
+        // AI Mind Logic Call
+        const response = getAIResponse(msg);
+        
+        setTimeout(() => {
+            addLine("AI: " + response);
+            speak(response);
+        }, 800);
+        
+        this.value = '';
+    }
+});
+
+addLine("SYSTEM ONLINE");
+addLine("VOICE ENGINE READY");
+addLine("SECURITY CORE ACTIVE");
+
+};
 
 </script>
 
-</div>
 </body>
 </html>
-
