@@ -660,5 +660,27 @@ addLine("SECURITY CORE ACTIVE");
 
 </script>
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
+  authDomain: "god-omni-ai.firebaseapp.com",
+  projectId: "god-omni-ai",
+  storageBucket: "god-omni-ai.firebasestorage.app",
+  messagingSenderId: "20500306900",
+  appId: "1:20500306900:web:a7b41696a123db1764d441",
+  measurementId: "G-2NNVLWRNXK"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 </body>
 </html>
