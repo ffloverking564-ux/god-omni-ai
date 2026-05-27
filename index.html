@@ -660,27 +660,368 @@ addLine("SECURITY CORE ACTIVE");
 
 </script>
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+<!-- ========================= -->
+<!-- FIREBASE FIREBALL SYSTEM -->
+<!-- ========================= -->
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+<script type="module">
+
+// =========================
+// FIREBASE IMPORTS
+// =========================
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { getAnalytics }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+import {
+getAuth,
+GoogleAuthProvider,
+signInWithPopup,
+signOut
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// =========================
+// FIREBASE CONFIG
+// =========================
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
-  authDomain: "god-omni-ai.firebaseapp.com",
-  projectId: "god-omni-ai",
-  storageBucket: "god-omni-ai.firebasestorage.app",
-  messagingSenderId: "20500306900",
-  appId: "1:20500306900:web:a7b41696a123db1764d441",
-  measurementId: "G-2NNVLWRNXK"
+
+apiKey:
+"AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
+
+authDomain:
+"god-omni-ai.firebaseapp.com",
+
+projectId:
+"god-omni-ai",
+
+storageBucket:
+"god-omni-ai.firebasestorage.app",
+
+messagingSenderId:
+"20500306900",
+
+appId:
+"1:20500306900:web:a7b41696a123db1764d441",
+
+measurementId:
+"G-2NNVLWRNXK"
+
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// =========================
+// INITIALIZE FIREBASE
+// =========================
+
+const app =
+initializeApp(firebaseConfig);
+
+const analytics =
+getAnalytics(app);
+
+const auth =
+getAuth(app);
+
+const provider =
+new GoogleAuthProvider();
+
+// =========================
+// GOOGLE LOGIN
+// =========================
+
+window.googleLogin = async () => {
+
+try{
+
+const result =
+await signInWithPopup(
+auth,
+provider
+);
+
+const user =
+result.user;
+
+// SAVE USER
+
+localStorage.setItem(
+"userName",
+user.displayName
+);
+
+localStorage.setItem(
+"userEmail",
+user.email
+);
+
+localStorage.setItem(
+"userPlan",
+"free"
+);
+
+// SHOW SUCCESS
+
+alert(
+"Welcome "
++ user.displayName
+);
+
+addLine(
+"LOGIN SUCCESSFUL"
+);
+
+addLine(
+"USER: "
++ user.email
+);
+
+speak(
+"Welcome to God Omni AI"
+);
+
+// OPEN CHAT
+
+document.getElementById(
+'chatSection'
+).classList.remove(
+'hidden'
+);
+
+}
+catch(error){
+
+alert(
+error.message
+);
+
+addLine(
+"LOGIN FAILED"
+);
+
+}
+
+};
+
+// =========================
+// LOGOUT
+// =========================
+
+window.logoutUser = async () => {
+
+await signOut(auth);
+
+localStorage.clear();
+
+location.reload();
+
+};
+
+// =========================
+// PREMIUM SUBSCRIPTIONS
+// =========================
+
+window.showPlans = () => {
+
+alert(
+
+"👑 GOD-OMNI PREMIUM 👑\n\n"
+
++
+
+"💻 AI CODING = ₹5999\n"
+
++
+
+"🎨 AI IMAGES = ₹1999\n"
+
++
+
+"🎬 AI VIDEO = ₹2999\n\n"
+
++
+
+"⏳ VALIDITY = 30 DAYS\n\n"
+
++
+
+"💳 PAYMENT UPI:\n"
+
++
+
+"loverking8919@oksbi"
+
+);
+
+};
+
+// =========================
+// FREE CHAT SYSTEM
+// =========================
+
+const chatInput =
+document.getElementById(
+'chatInput'
+);
+
+const chatBox =
+document.getElementById(
+'chatBox'
+);
+
+chatInput.addEventListener(
+'keypress',
+function(e){
+
+if(e.key === 'Enter'){
+
+const msg =
+this.value;
+
+if(msg.trim()==='') return;
+
+// USER MESSAGE
+
+chatBox.innerHTML +=
+
+`<div class="mb-2">
+>> USER:
+${msg}
+</div>`;
+
+// AI RESPONSE
+
+chatBox.innerHTML +=
+
+`<div class="mb-3 text-cyan-400">
+>> GOD-OMNI AI:
+Processing your request...
+</div>`;
+
+chatBox.scrollTop =
+chatBox.scrollHeight;
+
+// VOICE
+
+speak(
+"Processing your request"
+);
+
+this.value='';
+
+}
+
+});
+
+// =========================
+// AI VOICE
+// =========================
+
+window.speak = (text) => {
+
+const speech =
+new SpeechSynthesisUtterance(
+text
+);
+
+speech.rate = 1;
+
+speech.pitch = 1;
+
+speech.volume = 1;
+
+speechSynthesis.speak(
+speech
+);
+
+};
+
+// =========================
+// TERMINAL SYSTEM
+// =========================
+
+window.addLine = (text) => {
+
+const terminal =
+document.getElementById(
+'chatBox'
+);
+
+terminal.innerHTML +=
+`<div>> ${text}</div>`;
+
+terminal.scrollTop =
+terminal.scrollHeight;
+
+};
+
+// =========================
+// SECURITY SYSTEM
+// =========================
+
+window.addEventListener(
+'contextmenu',
+e => e.preventDefault()
+);
+
+window.addEventListener(
+'keydown',
+e => {
+
+if(
+e.key === 'F12'
+||
+(
+e.ctrlKey
+&&
+e.shiftKey
+&&
+e.key === 'I'
+)
+){
+
+e.preventDefault();
+
+addLine(
+"SECURITY WARNING"
+);
+
+}
+
+});
+
+// =========================
+// AUTO LOGIN CHECK
+// =========================
+
+window.onload = () => {
+
+const user =
+localStorage.getItem(
+'userName'
+);
+
+if(user){
+
+document.getElementById(
+'chatSection'
+).classList.remove(
+'hidden'
+);
+
+addLine(
+"WELCOME BACK "
++ user
+);
+
+}
+
+};
+
+</script>
 
 </body>
 </html>
