@@ -1,190 +1,76 @@
+<!-- ===================================== -->
+<!-- GOD-OMNI AI FINAL SYSTEM -->
+<!-- ===================================== -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GOD-OMNI AI | ULTIMATE ENGINE</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<meta charset="UTF-8" />
 
-<style>
-body{
-    background:#050816;
-    color:white;
-    font-family:sans-serif;
-    overflow-x:hidden;
-}
-
-.glass{
-    background:rgba(17,24,39,0.75);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,0.08);
-}
-
-.locked{
-    filter:grayscale(1) (3px);
-    opacity:0.6;
-}
-
-.unlocked{
-    border:1px solid #22c55e;
-    box-shadow:0 0 20px rgba(34,197,94,0.4);
-}
-
-.feature-card{
-    transition:0.3s;
-    cursor:pointer;
-}
-
-.feature-card:hover{
-    transform:translateY(-5px);
-}
-
-.terminal{
-    background:#000;
-    border:1px solid #222;
-    font-family:monospace;
-    color: white
-}
-</style>
-</head>
-
-<body class="p-6">
-
-<!-- ========================= -->
-<!-- GOD-OMNI AI ULTRA HEADER -->
-<!-- ========================= -->
-
-<header class="relative overflow-hidden rounded-[40px] p-8 mb-10 glass border border-purple-500/20">
-
-<!-- BACKGROUND GLOW -->
-
-<div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-pink-500/10"></div>
-
-<div class="absolute w-96 h-96 bg-purple-500/20 blur-[120px] rounded-full -top-20 -left-20"></div>
-
-<div class="absolute w-80 h-80 bg-blue-500/20 blur-[120px] rounded-full bottom-0 right-0"></div>
-
-<!-- MAIN CONTENT -->
-
-<div class="relative z-10 flex flex-col items-center text-center">
-
-<!-- LOGO -->
-
-<div class="relative mb-8">
-
-<img
-src="./logo.png"
-alt="GOD-OMNI AI"
-class="w-72 md:w-80 animateLogo select-none"
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
 />
 
-<div class="absolute inset-0 rounded-full border border-purple-400/30 animate-spin-slow"></div>
+<title>
+GOD-OMNI AI
+</title>
 
-</div>
+<!-- TAILWIND -->
 
-<!-- TITLE -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-<h1 class="text-6xl md:text-8xl font-black leading-none tracking-wide">
+<!-- FONT AWESOME -->
 
-<span class="text-white">
-GOD-OMNI
-</span>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
 
-<span class="text-yellow-400">
-AI
-</span>
-
-</h1>
-
-<!-- PREMIUM TEXT -->
-
-<h2 class="mt-5 text-yellow-300 text-xl md:text-3xl tracking-[12px] font-bold uppercase">
-
-OMNIPOTENT INTELLIGENCE
-
-</h2>
-
-<!-- DESCRIPTION -->
-
-<p class="mt-5 text-gray-400 text-lg md:text-xl max-w-2xl">
-
-Ultimate Premium Artificial Intelligence Engine
-
-</p>
-
-<!-- STATUS BUTTONS -->
-
-<div class="flex flex-col gap-5 mt-10 w-full items-center">
-
-<div class="w-72 py-4 rounded-2xl bg-green-500/10 border border-green-400 text-green-300 text-2xl font-bold shadow-[0_0_30px_rgba(34,197,94,0.3)]">
-
-⚡ AI ACTIVE
-
-</div>
-
-<div class="w-72 py-4 rounded-2xl bg-blue-500/10 border border-blue-400 text-blue-300 text-2xl font-bold shadow-[0_0_30px_rgba(59,130,246,0.3)]">
-
-🎤 VOICE READY
-
-</div>
-
-<div class="w-72 py-4 rounded-2xl bg-purple-500/10 border border-purple-400 text-purple-300 text-2xl font-bold shadow-[0_0_30px_rgba(168,85,247,0.3)]">
-
-👁 SYSTEM ONLINE
-
-</div>
-
-</div>
-
-<!-- BUTTONS -->
-
-<div class="flex flex-wrap justify-center gap-5 mt-10">
-
-<button id="voiceBtn"
-class="px-10 py-4 rounded-2xl bg-gradient-to-r from-green-400 to-emerald-500 text-black font-black text-xl hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(34,197,94,0.5)]">
-
-🎤 Voice
-
-</button>
-
-<button id="masterBtn"
-class="px-10 py-4 rounded-2xl bg-gradient-to-r from-yellow-300 to-amber-500 text-black font-black text-xl hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(250,204,21,0.5)]">
-
-🔑 Access
-
-</button>
-
-<a href="https://www.youtube.com/@FFLOVERKING33"
-target="_blank"
-class="px-10 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-pink-600 text-white font-black text-xl hover:scale-105 transition-all duration-300 shadow-[0_0_35px_rgba(239,68,68,0.5)]">
-
-▶ YouTube
-
-</a>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- ========================= -->
-<!-- ULTRA CSS -->
-<!-- ========================= -->
+<!-- ===================================== -->
+<!-- CSS -->
+<!-- ===================================== -->
 
 <style>
 
-.glass{
-background:rgba(10,15,30,0.75);
-backdrop-filter:blur(18px);
-box-shadow:0 0 40px rgba(0,0,0,0.5);
+body{
+
+background:#020617;
+
+color:white;
+
+font-family:sans-serif;
+
+overflow-x:hidden;
+
 }
 
+/* GLASS EFFECT */
+
+.glass{
+
+background:rgba(15,23,42,0.7);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:0 0 40px rgba(0,0,0,0.5);
+
+}
+
+/* LOGO ANIMATION */
+
 .animateLogo{
+
 animation:logoFloat 4s ease-in-out infinite;
-filter:drop-shadow(0 0 35px rgba(168,85,247,0.8));
+
+filter:drop-shadow(
+0 0 35px rgba(168,85,247,0.8)
+);
+
 }
 
 @keyframes logoFloat{
@@ -203,8 +89,12 @@ transform:translateY(0px) scale(1);
 
 }
 
+/* SPIN */
+
 .animate-spin-slow{
+
 animation:spinSlow 18s linear infinite;
+
 }
 
 @keyframes spinSlow{
@@ -219,71 +109,429 @@ transform:rotate(360deg);
 
 }
 
-body{
-background:#020617;
-overflow-x:hidden;
-font-family:sans-serif;
+/* TERMINAL */
+
+.terminal{
+
+background:#000;
+
+border:1px solid #222;
+
+font-family:monospace;
+
 }
 
-</style> 
-    
-          
-    
+/* LOCKED */
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+.locked{
 
-<div class="feature-card locked glass p-6 rounded-3xl">
-<i class="fa-solid fa-code text-blue-400 text-3xl mb-3"></i>
-<h3 class="font-bold text-xl">AI Coding</h3>
+filter:grayscale(1);
+
+opacity:0.5;
+
+}
+
+/* UNLOCKED */
+
+.unlocked{
+
+border:1px solid #22c55e;
+
+box-shadow:0 0 20px rgba(34,197,94,0.4);
+
+}
+
+/* FEATURE */
+
+.feature-card{
+
+transition:0.3s;
+
+cursor:pointer;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+</style>
+
+</head>
+
+<body class="p-6">
+
+<!-- ===================================== -->
+<!-- HEADER -->
+<!-- ===================================== -->
+
+<header
+class="relative overflow-hidden rounded-[40px] p-8 mb-10 glass border border-purple-500/20"
+>
+
+<!-- BACKGROUND -->
+
+<div
+class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-pink-500/10"
+></div>
+
+<div
+class="absolute w-96 h-96 bg-purple-500/20 blur-[120px] rounded-full -top-20 -left-20"
+></div>
+
+<div
+class="absolute w-80 h-80 bg-blue-500/20 blur-[120px] rounded-full bottom-0 right-0"
+></div>
+
+<!-- CONTENT -->
+
+<div
+class="relative z-10 flex flex-col items-center text-center"
+>
+
+<!-- LOGO -->
+
+<div class="relative mb-8">
+
+<img
+
+src="https://i.imgur.com/8Km9tLL.png"
+
+alt="GOD-OMNI AI"
+
+class="w-72 md:w-80 animateLogo select-none"
+
+/>
+
+<div
+class="absolute inset-0 rounded-full border border-purple-400/30 animate-spin-slow"
+></div>
+
+</div>
+
+<!-- TITLE -->
+
+<h1
+class="text-6xl md:text-8xl font-black tracking-wide leading-none"
+>
+
+<span class="text-white">
+
+GOD-OMNI
+
+</span>
+
+<span class="text-yellow-400">
+
+AI
+
+</span>
+
+</h1>
+
+<!-- SUBTITLE -->
+
+<h2
+class="mt-5 text-yellow-300 text-xl md:text-3xl tracking-[12px] font-bold uppercase"
+>
+
+OMNIPOTENT INTELLIGENCE
+
+</h2>
+
+<!-- DESCRIPTION -->
+
+<p
+class="mt-5 text-gray-400 text-lg md:text-xl max-w-2xl"
+>
+
+Ultimate Premium Artificial Intelligence Engine
+
+</p>
+
+<!-- STATUS -->
+
+<div
+class="flex flex-col gap-5 mt-10 w-full items-center"
+>
+
+<div
+class="w-72 py-4 rounded-2xl bg-green-500/10 border border-green-400 text-green-300 text-2xl font-bold text-center"
+>
+
+⚡ AI ACTIVE
+
+</div>
+
+<div
+class="w-72 py-4 rounded-2xl bg-blue-500/10 border border-blue-400 text-blue-300 text-2xl font-bold text-center"
+>
+
+🎤 VOICE READY
+
+</div>
+
+<div
+class="w-72 py-4 rounded-2xl bg-purple-500/10 border border-purple-400 text-purple-300 text-2xl font-bold text-center"
+>
+
+👁 SYSTEM ONLINE
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div
+class="flex flex-wrap justify-center gap-5 mt-10"
+>
+
+<!-- GOOGLE LOGIN -->
+
+<button
+
+id="googleLoginBtn"
+
+class="px-10 py-4 rounded-2xl bg-white text-black font-bold text-xl hover:scale-105 transition-all"
+
+>
+
+🔐 Continue With Google
+
+</button>
+
+<!-- YOUTUBE -->
+
+<a
+
+href="https://www.youtube.com/@FFLOVERKING33"
+
+target="_blank"
+
+class="px-10 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-pink-600 text-white font-black text-xl hover:scale-105 transition-all"
+
+>
+
+▶ YouTube
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ===================================== -->
+<!-- FEATURES -->
+<!-- ===================================== -->
+
+<div
+class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8"
+>
+
+<!-- AI CODING -->
+
+<div
+class="feature-card glass p-6 rounded-3xl unlocked"
+>
+
+<i
+class="fa-solid fa-code text-blue-400 text-3xl mb-3"
+></i>
+
+<h3 class="font-bold text-xl">
+
+AI Coding
+
+</h3>
+
 <p class="text-gray-400 text-sm mt-2">
+
 Unlimited Coding System
+
 </p>
+
 </div>
 
-<div class="feature-card locked glass p-6 rounded-3xl">
-<i class="fa-solid fa-image text-pink-400 text-3xl mb-3"></i>
-<h3 class="font-bold text-xl">AI Images</h3>
+<!-- AI IMAGE -->
+
+<div
+class="feature-card glass p-6 rounded-3xl locked"
+>
+
+<i
+class="fa-solid fa-image text-pink-400 text-3xl mb-3"
+></i>
+
+<h3 class="font-bold text-xl">
+
+AI Images
+
+</h3>
+
 <p class="text-gray-400 text-sm mt-2">
+
 AI Poster Generator
+
 </p>
+
 </div>
 
-<div class="feature-card locked glass p-6 rounded-3xl">
-<i class="fa-solid fa-video text- white text-3xl mb-3"></i>
-<h3 class="font-bold text-xl">AI Video</h3>
+<!-- AI VIDEO -->
+
+<div
+class="feature-card glass p-6 rounded-3xl locked"
+>
+
+<i
+class="fa-solid fa-video text-white text-3xl mb-3"
+></i>
+
+<h3 class="font-bold text-xl">
+
+AI Video
+
+</h3>
+
 <p class="text-gray-400 text-sm mt-2">
+
 Cinematic Video Engine
+
 </p>
+
 </div>
 
-<div class="feature-card locked glass p-6 rounded-3xl">
-<i class="fa-solid fa-microphone text-orange-400 text-3xl mb-3"></i>
-<h3 class="font-bold text-xl">Voice AI</h3>
+<!-- VOICE AI -->
+
+<div
+class="feature-card glass p-6 rounded-3xl locked"
+>
+
+<i
+class="fa-solid fa-microphone text-orange-400 text-3xl mb-3"
+></i>
+
+<h3 class="font-bold text-xl">
+
+Voice AI
+
+</h3>
+
 <p class="text-gray-400 text-sm mt-2">
+
 Speech Recognition Engine
+
 </p>
+
+</div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- TERMINAL -->
+<!-- ===================================== -->
+
+<div
+
+id="terminal"
+
+class="terminal rounded-3xl p-5 h-72 overflow-y-auto text-white mb-5"
+
+>
+
+<div>
+
+> GOD-OMNI SYSTEM INITIALIZED...
+
 </div>
 
 </div>
 
-<div id="terminal"
-class="terminal rounded-3xl p-5 h-72 overflow-y-auto text-white- mb-5">
-
-<div>> GOD-OMNI SYSTEM INITIALIZED...</div>
-
-</div>
+<!-- ===================================== -->
+<!-- CHAT INPUT -->
+<!-- ===================================== -->
 
 <input
+
 id="chatInput"
+
 class="w-full bg-gray-900 p-4 rounded-2xl border border-gray-700 outline-none"
-placeholder="Ask GOD-OMNI AI..." />
 
-<script>
+placeholder="Ask GOD-OMNI AI..."
 
+/>
+
+<!-- ===================================== -->
+<!-- FIREBASE -->
+<!-- ===================================== -->
+
+<script type="module">
+
+// =====================================
+// FIREBASE IMPORT
+// =====================================
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+getAuth,
+
+GoogleAuthProvider,
+
+signInWithPopup
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// =====================================
+// FIREBASE CONFIG
+// =====================================
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
+
+authDomain: "god-omni-ai.firebaseapp.com",
+
+projectId: "god-omni-ai",
+
+storageBucket: "god-omni-ai.firebasestorage.app",
+
+messagingSenderId: "20500306900",
+
+appId: "1:20500306900:web:a7b41696a123db1764d441",
+
+measurementId: "G-2NNVLWRNXK"
+
+};
+
+// =====================================
+// FIREBASE START
+// =====================================
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const provider = new GoogleAuthProvider();
+
+// =====================================
 // TERMINAL
+// =====================================
 
 const terminal =
-document.getElementById('terminal');
+
+document.getElementById(
+'terminal'
+);
 
 function addLine(text){
 
@@ -295,634 +543,14 @@ terminal.scrollHeight;
 
 }
 
-// AI VOICE
+// =====================================
+// VOICE
+// =====================================
 
 function speak(text){
 
 const speech =
-new SpeechSynthesisUtterance(text);
 
-speech.rate = 1;
-speech.pitch = 1;
-
-speechSynthesis.speak(speech);
-
-}
-
-// SUBSCRIPTION DATABASE
-
-const subscriptionPlans = {
-
-"VIP_999":{
-level:"photo",
-name:"VIP PHOTO PLAN"
-},
-
-"ULTRA_1999":{
-level:"media",
-name:"ULTRA MEDIA PLAN"
-},
-
-"KING_CODE_5999":{
-level:"full",
-name:"KING CODING PLAN"
-}
-
-};
-
-// UNLOCK FEATURES
-
-function unlockFeatures(level){
-
-document.querySelectorAll('.feature-card')
-.forEach(card=>{
-
-const title =
-card.querySelector('h3').innerText;
-
-card.classList.add('locked');
-card.classList.remove('unlocked');
-
-if(level==="full"){
-
-card.classList.remove('locked');
-card.classList.add('unlocked');
-
-}
-
-else if(level==="media"){
-
-if(
-title==="AI Images"
-||
-title==="AI Video"
-||
-title==="Voice AI"
-){
-
-card.classList.remove('locked');
-card.classList.add('unlocked');
-
-}
-
-}
-
-else if(level==="photo"){
-
-if(
-title==="AI Images"
-||
-title==="Voice AI"
-){
-
-card.classList.remove('locked');
-card.classList.add('unlocked');
-
-}
-
-}
-
-});
-
-localStorage.setItem(
-'userPlan',
-level
-);
-
-addLine(
-"SUBSCRIPTION ACTIVATED: "
-+ level.toUpperCase()
-);
-
-}
-
-// VERIFY SUBSCRIPTION
-
-function verifySubscription(key){
-
-if(subscriptionPlans[key]){
-
-const plan =
-subscriptionPlans[key];
-
-unlockFeatures(plan.level);
-
-alert(
-plan.name + " ACTIVATED"
-);
-
-speak(
-plan.name + " activated"
-);
-
-addLine(
-"ACTIVE PLAN: "
-+ plan.name
-);
-
-}
-
-else{
-
-alert("INVALID KEY");
-
-addLine("ACCESS DENIED");
-
-speak("Invalid key");
-
-}
-
-}
-
-// ACCESS BUTTON
-
-document.getElementById('masterBtn')
-.onclick = () => {
-
-const key =
-prompt(
-"Enter Admin or Subscription Key"
-);
-
-if(key==="GOD_OMNI_MASTER"){
-
-unlockFeatures("full");
-
-alert("MASTER ACCESS");
-
-speak("Welcome back admin");
-
-addLine("ADMIN ACCESS ENABLED");
-
-}
-
-else{
-
-verifySubscription(key);
-
-}
-
-};
-
-// FEATURE CLICK
-
-document.querySelectorAll('.feature-card')
-.forEach(card=>{
-
-card.onclick = () => {
-
-if(card.classList.contains('locked')){
-
-const key = prompt(
-
-"👑 GOD-OMNI PREMIUM 👑\n\n"
-+
-"VIP PHOTO = VIP_999\n"
-+
-"ULTRA MEDIA = ULTRA_1999\n"
-+
-"KING CODING = KING_CODE_5999\n\n"
-+
-"UPI: loverking8919@oksbi\n\n"
-+
-"Enter Key:"
-
-);
-
-verifySubscription(key);
-
-}
-
-else{
-
-const feature =
-card.querySelector('h3').innerText;
-
-addLine(feature + " READY");
-
-speak(feature + " ready");
-
-}
-
-};
-
-});
-
-// CHAT SYSTEM
-
-document.getElementById('chatInput')
-.addEventListener('keypress',function(e){
-
-if(e.key==='Enter'){
-
-const msg = this.value;
-
-addLine("USER: " + msg);
-
-addLine("AI: Processing request...");
-
-speak("Processing your request");
-
-this.value='';
-
-}
-
-});
-
-// VOICE INPUT
-
-document.getElementById('voiceBtn')
-.onclick = () => {
-
-if('webkitSpeechRecognition' in window){
-
-const recognition =
-new webkitSpeechRecognition();
-
-recognition.lang='en-US';
-
-recognition.start();
-
-addLine("VOICE LISTENING STARTED");
-
-recognition.onresult =
-function(event){
-
-const text =
-event.results[0][0].transcript;
-
-document.getElementById(
-'chatInput'
-).value = text;
-
-addLine("VOICE: " + text);
-
-speak("You said " + text);
-
-};
-
-}
-
-else{
-
-alert(
-"VOICE NOT SUPPORTED"
-);
-
-}
-
-};
-
-// SECURITY
-
-window.addEventListener(
-'contextmenu',
-e=>e.preventDefault()
-);
-
-window.addEventListener(
-'keydown',
-e=>{
-
-if(
-e.key==='F12'
-||
-(
-e.ctrlKey
-&&
-e.shiftKey
-&&
-e.key==='I'
-)
-){
-
-e.preventDefault();
-
-addLine(
-"SECURITY WARNING"
-);
-
-}
-
-});
-
-// LOAD SYSTEM
-
-window.onload = () => {
-
-const savedPlan =
-localStorage.getItem('userPlan');
-
-if(savedPlan){
-
-unlockFeatures(savedPlan);
-
-}
-// AI MIND CORE
-function getAIResponse(input) {
-    const msg = input.toLowerCase();
-    
-    if (msg.includes("hello") || msg.includes("hi")) {
-        return "Hello! I am GOD-OMNI AI. How can I help you today?";
-    } else if (msg.includes("who are you")) {
-        return "I am GOD-OMNI AI, the ultimate premium intelligence engine.";
-    } else if (msg.includes("time")) {
-        return "The current time is " + new Date().toLocaleTimeString();
-    } else {
-        return "I am processing your command. I am currently evolving to serve you better.";
-    }
-}
-
-// UPDATE CHAT SYSTEM TO USE MIND
-document.getElementById('chatInput')
-.addEventListener('keypress', function(e){
-    if(e.key === 'Enter'){
-        const msg = this.value;
-        addLine("USER: " + msg);
-        
-        // AI Mind Logic Call
-        const response = getAIResponse(msg);
-        
-        setTimeout(() => {
-            addLine("AI: " + response);
-            speak(response);
-        }, 800);
-        
-        this.value = '';
-    }
-});
-
-addLine("SYSTEM ONLINE");
-addLine("VOICE ENGINE READY");
-addLine("SECURITY CORE ACTIVE");
-
-};
-
-</script>
-
-<!-- ========================= -->
-<!-- FIREBASE FIREBALL SYSTEM -->
-<!-- ========================= -->
-
-<script type="module">
-
-// =========================
-// FIREBASE IMPORTS
-// =========================
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import { getAnalytics }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
-import {
-getAuth,
-GoogleAuthProvider,
-signInWithPopup,
-signOut
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-// =========================
-// FIREBASE CONFIG
-// =========================
-
-const firebaseConfig = {
-
-apiKey:
-"AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
-
-authDomain:
-"god-omni-ai.firebaseapp.com",
-
-projectId:
-"god-omni-ai",
-
-storageBucket:
-"god-omni-ai.firebasestorage.app",
-
-messagingSenderId:
-"20500306900",
-
-appId:
-"1:20500306900:web:a7b41696a123db1764d441",
-
-measurementId:
-"G-2NNVLWRNXK"
-
-};
-
-// =========================
-// INITIALIZE FIREBASE
-// =========================
-
-const app =
-initializeApp(firebaseConfig);
-
-const analytics =
-getAnalytics(app);
-
-const auth =
-getAuth(app);
-
-const provider =
-new GoogleAuthProvider();
-
-// =========================
-// GOOGLE LOGIN
-// =========================
-
-window.googleLogin = async () => {
-
-try{
-
-const result =
-await signInWithPopup(
-auth,
-provider
-);
-
-const user =
-result.user;
-
-// SAVE USER
-
-localStorage.setItem(
-"userName",
-user.displayName
-);
-
-localStorage.setItem(
-"userEmail",
-user.email
-);
-
-localStorage.setItem(
-"userPlan",
-"free"
-);
-
-// SHOW SUCCESS
-
-alert(
-"Welcome "
-+ user.displayName
-);
-
-addLine(
-"LOGIN SUCCESSFUL"
-);
-
-addLine(
-"USER: "
-+ user.email
-);
-
-speak(
-"Welcome to God Omni AI"
-);
-
-// OPEN CHAT
-
-document.getElementById(
-'chatSection'
-).classList.remove(
-'hidden'
-);
-
-}
-catch(error){
-
-alert(
-error.message
-);
-
-addLine(
-"LOGIN FAILED"
-);
-
-}
-
-};
-
-// =========================
-// LOGOUT
-// =========================
-
-window.logoutUser = async () => {
-
-await signOut(auth);
-
-localStorage.clear();
-
-location.reload();
-
-};
-
-// =========================
-// PREMIUM SUBSCRIPTIONS
-// =========================
-
-window.showPlans = () => {
-
-alert(
-
-"👑 GOD-OMNI PREMIUM 👑\n\n"
-
-+
-
-"💻 AI CODING = ₹5999\n"
-
-+
-
-"🎨 AI IMAGES = ₹1999\n"
-
-+
-
-"🎬 AI VIDEO = ₹2999\n\n"
-
-+
-
-"⏳ VALIDITY = 30 DAYS\n\n"
-
-+
-
-"💳 PAYMENT UPI:\n"
-
-+
-
-"loverking8919@oksbi"
-
-);
-
-};
-
-// =========================
-// FREE CHAT SYSTEM
-// =========================
-
-const chatInput =
-document.getElementById(
-'chatInput'
-);
-
-const chatBox =
-document.getElementById(
-'chatBox'
-);
-
-chatInput.addEventListener(
-'keypress',
-function(e){
-
-if(e.key === 'Enter'){
-
-const msg =
-this.value;
-
-if(msg.trim()==='') return;
-
-// USER MESSAGE
-
-chatBox.innerHTML +=
-
-`<div class="mb-2">
->> USER:
-${msg}
-</div>`;
-
-// AI RESPONSE
-
-chatBox.innerHTML +=
-
-`<div class="mb-3 text-cyan-400">
->> GOD-OMNI AI:
-Processing your request...
-</div>`;
-
-chatBox.scrollTop =
-chatBox.scrollHeight;
-
-// VOICE
-
-speak(
-"Processing your request"
-);
-
-this.value='';
-
-}
-
-});
-
-// =========================
-// AI VOICE
-// =========================
-
-window.speak = (text) => {
-
-const speech =
 new SpeechSynthesisUtterance(
 text
 );
@@ -937,30 +565,171 @@ speechSynthesis.speak(
 speech
 );
 
-};
+}
 
-// =========================
-// TERMINAL SYSTEM
-// =========================
+// =====================================
+// GOOGLE LOGIN
+// =====================================
 
-window.addLine = (text) => {
-
-const terminal =
 document.getElementById(
-'chatBox'
+'googleLoginBtn'
+).onclick = async () => {
+
+try{
+
+const result =
+
+await signInWithPopup(
+auth,
+provider
 );
 
-terminal.innerHTML +=
-`<div>> ${text}</div>`;
+const user = result.user;
 
-terminal.scrollTop =
-terminal.scrollHeight;
+localStorage.setItem(
+'userName',
+user.displayName
+);
+
+localStorage.setItem(
+'userEmail',
+user.email
+);
+
+alert(
+"Welcome " + user.displayName
+);
+
+addLine(
+"WELCOME " + user.displayName
+);
+
+speak(
+"Welcome " + user.displayName
+);
+
+}
+catch(error){
+
+alert(error.message);
+
+}
 
 };
 
-// =========================
-// SECURITY SYSTEM
-// =========================
+// =====================================
+// PREMIUM SYSTEM
+// =====================================
+
+function unlockFeatures(level){
+
+document.querySelectorAll(
+'.feature-card'
+).forEach(card => {
+
+const title =
+
+card.querySelector('h3').innerText;
+
+if(level === "full"){
+
+card.classList.remove(
+'locked'
+);
+
+card.classList.add(
+'unlocked'
+);
+
+}
+
+});
+
+}
+
+// =====================================
+// PREMIUM TIMER
+// =====================================
+
+function activatePremium(days){
+
+const now = new Date();
+
+const expire =
+
+now.getTime() +
+(days * 24 * 60 * 60 * 1000);
+
+localStorage.setItem(
+'premiumExpire',
+expire
+);
+
+unlockFeatures('full');
+
+}
+
+function checkPremium(){
+
+const expire =
+
+localStorage.getItem(
+'premiumExpire'
+);
+
+if(expire){
+
+if(Date.now() < expire){
+
+unlockFeatures('full');
+
+addLine(
+"PREMIUM ACTIVE"
+);
+
+}
+
+}
+
+}
+
+checkPremium();
+
+// =====================================
+// CHAT SYSTEM
+// =====================================
+
+document.getElementById(
+'chatInput'
+).addEventListener(
+'keypress',
+function(e){
+
+if(e.key === 'Enter'){
+
+const msg = this.value;
+
+addLine(
+"USER: " + msg
+);
+
+addLine(
+"AI: Processing request..."
+);
+
+speak(
+"Processing your request"
+);
+
+this.value = "";
+
+}
+
+});
+
+// =====================================
+// SECURITY
+// =====================================
 
 window.addEventListener(
 'contextmenu',
@@ -972,15 +741,25 @@ window.addEventListener(
 e => {
 
 if(
+
 e.key === 'F12'
+
 ||
+
 (
+
 e.ctrlKey
+
 &&
+
 e.shiftKey
+
 &&
+
 e.key === 'I'
+
 )
+
 ){
 
 e.preventDefault();
@@ -993,28 +772,22 @@ addLine(
 
 });
 
-// =========================
-// AUTO LOGIN CHECK
-// =========================
+// =====================================
+// AUTO LOGIN
+// =====================================
 
 window.onload = () => {
 
 const user =
+
 localStorage.getItem(
 'userName'
 );
 
 if(user){
 
-document.getElementById(
-'chatSection'
-).classList.remove(
-'hidden'
-);
-
 addLine(
-"WELCOME BACK "
-+ user
+"WELCOME BACK " + user
 );
 
 }
@@ -1024,4 +797,5 @@ addLine(
 </script>
 
 </body>
+
 </html>
