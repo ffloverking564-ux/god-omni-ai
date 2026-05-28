@@ -1010,7 +1010,501 @@ addLine(
 );
 
 };
+<!-- ===================================== -->
+<!-- GOD-OMNI REAL SECURITY CORE -->
+<!-- IS PURE CODE KO BODY KE LAST ME -->
+<!-- </body> KE UPAR PASTE KARNA -->
+<!-- ===================================== -->
 
+<script>
+
+/* ===================================== */
+/* GOD-OMNI REAL SECURITY ENGINE */
+/* ===================================== */
+
+const GOD_SECURITY = {
+
+ANTI_INSPECT: true,
+
+ANTI_DEBUG: true,
+
+ANTI_VIEW_SOURCE: true,
+
+ANTI_COPY: false,
+
+ANTI_SELECT: false,
+
+ANTI_CONSOLE: true,
+
+ANTI_DEVTOOLS: true,
+
+ANTI_RIGHT_CLICK: true,
+
+ANTI_IFRAME: true,
+
+ANTI_SPAM: true,
+
+ANTI_BOT: true,
+
+ANTI_MULTI_TAB: false,
+
+MAX_MESSAGES_PER_MINUTE: 10,
+
+AUTO_CLEAR_CONSOLE: true,
+
+AUTO_RELOAD_ON_ATTACK: false
+
+};
+
+/* ===================================== */
+/* SECURITY TERMINAL */
+/* ===================================== */
+
+function securityLog(text){
+
+const terminal =
+document.getElementById(
+'terminal'
+);
+
+if(terminal){
+
+terminal.innerHTML +=
+`<div style="color:red;">[SECURITY] ${text}</div>`;
+
+terminal.scrollTop =
+terminal.scrollHeight;
+
+}
+
+}
+
+/* ===================================== */
+/* RIGHT CLICK BLOCK */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_RIGHT_CLICK
+){
+
+window.addEventListener(
+'contextmenu',
+e => {
+
+e.preventDefault();
+
+securityLog(
+"RIGHT CLICK BLOCKED"
+);
+
+}
+);
+
+}
+
+/* ===================================== */
+/* DEVTOOLS BLOCK */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_DEVTOOLS
+){
+
+window.addEventListener(
+'keydown',
+e => {
+
+if(
+
+e.key === 'F12'
+
+||
+
+(
+e.ctrlKey
+&&
+e.shiftKey
+&&
+e.key === 'I'
+)
+
+||
+
+(
+e.ctrlKey
+&&
+e.shiftKey
+&&
+e.key === 'J'
+)
+
+||
+
+(
+e.ctrlKey
+&&
+e.key === 'U'
+)
+
+||
+
+(
+e.ctrlKey
+&&
+e.key === 'S'
+)
+
+||
+
+(
+e.ctrlKey
+&&
+e.key === 'P'
+)
+
+){
+
+e.preventDefault();
+
+securityLog(
+"DEVTOOLS BLOCKED"
+);
+
+}
+
+});
+
+}
+
+/* ===================================== */
+/* CONSOLE WARNING */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_CONSOLE
+){
+
+console.clear();
+
+console.log(
+
+"%cSTOP",
+
+"color:red;font-size:80px;font-weight:bold;"
+
+);
+
+console.log(
+
+"%cUnauthorized access prohibited.",
+
+"font-size:20px;color:white;background:red;padding:10px;"
+
+);
+
+}
+
+/* ===================================== */
+/* ANTI DEBUG */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_DEBUG
+){
+
+setInterval(()=>{
+
+const start =
+performance.now();
+
+debugger;
+
+const end =
+performance.now();
+
+if(
+end - start > 100
+){
+
+securityLog(
+"DEBUGGER DETECTED"
+);
+
+if(
+GOD_SECURITY.AUTO_RELOAD_ON_ATTACK
+){
+
+location.reload();
+
+}
+
+}
+
+},1000);
+
+}
+
+/* ===================================== */
+/* ANTI INSPECT */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_INSPECT
+){
+
+setInterval(()=>{
+
+const widthCheck =
+window.outerWidth - window.innerWidth > 160;
+
+const heightCheck =
+window.outerHeight - window.innerHeight > 160;
+
+if(
+widthCheck
+||
+heightCheck
+){
+
+securityLog(
+"INSPECT DETECTED"
+);
+
+}
+
+},1000);
+
+}
+
+/* ===================================== */
+/* ANTI IFRAME */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_IFRAME
+){
+
+if(
+window.self !== window.top
+){
+
+document.body.innerHTML = `
+
+<div
+style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:black;
+color:red;
+font-size:45px;
+font-weight:bold;
+"
+>
+
+IFRAME BLOCKED
+
+</div>
+
+`;
+
+}
+
+}
+
+/* ===================================== */
+/* ANTI COPY */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_COPY
+){
+
+window.addEventListener(
+'copy',
+e => {
+
+e.preventDefault();
+
+securityLog(
+"COPY BLOCKED"
+);
+
+}
+);
+
+}
+
+/* ===================================== */
+/* ANTI TEXT SELECT */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_SELECT
+){
+
+document.body.style.userSelect =
+'none';
+
+}
+
+/* ===================================== */
+/* SPAM PROTECTION */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_SPAM
+){
+
+let messageCount = 0;
+
+let resetTime = Date.now();
+
+window.checkSpam = ()=>{
+
+const now = Date.now();
+
+if(
+now - resetTime > 60000
+){
+
+messageCount = 0;
+
+resetTime = now;
+
+}
+
+messageCount++;
+
+if(
+messageCount >
+GOD_SECURITY.MAX_MESSAGES_PER_MINUTE
+){
+
+alert(
+"SPAM DETECTED"
+);
+
+securityLog(
+"SPAM BLOCKED"
+);
+
+return false;
+
+}
+
+return true;
+
+};
+
+}
+
+/* ===================================== */
+/* BOT DETECTION */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_BOT
+){
+
+window.addEventListener(
+'mousemove',
+()=>{
+
+window.realUser = true;
+
+}
+);
+
+setTimeout(()=>{
+
+if(
+!window.realUser
+){
+
+securityLog(
+"BOT ACTIVITY DETECTED"
+);
+
+}
+
+},5000);
+
+}
+
+/* ===================================== */
+/* MULTI TAB BLOCK */
+/* ===================================== */
+
+if(
+GOD_SECURITY.ANTI_MULTI_TAB
+){
+
+window.addEventListener(
+'storage',
+()=>{
+
+securityLog(
+"MULTI TAB DETECTED"
+);
+
+}
+);
+
+}
+
+/* ===================================== */
+/* AUTO CLEAR CONSOLE */
+/* ===================================== */
+
+if(
+GOD_SECURITY.AUTO_CLEAR_CONSOLE
+){
+
+setInterval(()=>{
+
+console.clear();
+
+},3000);
+
+}
+
+/* ===================================== */
+/* FUTURE SECURITY PLACE */
+/* ===================================== */
+
+/*
+
+YAHAN FUTURE ME ADD KARNA:
+
+✔ FIREBASE SECURITY RULES
+✔ JWT TOKEN SYSTEM
+✔ DATABASE FIREWALL
+✔ API REQUEST ENCRYPTION
+✔ DDOS PROTECTION
+✔ ADMIN SECURITY
+✔ VPN BLOCK
+✔ GEO BLOCK
+✔ DEVICE TRACKING
+✔ CLOUD FUNCTIONS
+✔ AI REQUEST LIMITER
+✔ SERVER VALIDATION
+✔ PAYMENT VERIFY API
+✔ CAPTCHA SYSTEM
+✔ AI FIREWALL
+
+*/
+
+/* ===================================== */
+/* SECURITY READY */
+/* ===================================== */
+
+securityLog(
+"REAL SECURITY CORE ACTIVE"
+);
+
+  
 </script>
 
 </body>
