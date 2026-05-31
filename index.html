@@ -554,248 +554,6 @@ IS JAGAH AI KA BRAIN ADD KARNA
 <!-- FIREBASE -->
 <!-- ===================================== -->
 
-<script type="module">
-
-/* ===================================== */
-/* FIREBASE IMPORT */
-/* ===================================== */
-
-import { initializeApp }
-
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-
-getAuth,
-
-GoogleAuthProvider,
-
-signInWithPopup,
-
-signOut,
-
-onAuthStateChanged
-
-}
-
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-import {
-
-getAnalytics
-
-}
-
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
-/* ===================================== */
-/* FIREBASE CONFIG */
-/* ===================================== */
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
-
-authDomain: "god-omni-ai.firebaseapp.com",
-
-projectId: "god-omni-ai",
-
-storageBucket: "god-omni-ai.firebasestorage.app",
-
-messagingSenderId: "20500306900",
-
-appId: "1:20500306900:web:a7b41696a123db1764d441",
-
-measurementId: "G-2NNVLWRNXK"
-
-};
-
-/* ===================================== */
-/* FIREBASE START */
-/* ===================================== */
-
-const app =
-initializeApp(firebaseConfig);
-
-const analytics =
-getAnalytics(app);
-
-const auth =
-getAuth(app);
-
-const provider =
-new GoogleAuthProvider();
-
-/* ===================================== */
-/* TERMINAL */
-/* ===================================== */
-
-const terminal =
-document.getElementById(
-'terminal'
-);
-
-function addLine(text){
-
-terminal.innerHTML +=
-`<div>> ${text}</div>`;
-
-terminal.scrollTop =
-terminal.scrollHeight;
-
-}
-
-window.addLine = addLine;
-
-/* ===================================== */
-/* VOICE */
-/* ===================================== */
-
-window.speak = (text) => {
-
-const speech =
-new SpeechSynthesisUtterance(text);
-
-speech.rate = 1;
-
-speech.pitch = 1;
-
-speech.volume = 1;
-
-speechSynthesis.speak(
-speech
-);
-
-};
-
-/* ===================================== */
-/* GOOGLE LOGIN */
-/* ===================================== */
-
-document.getElementById(
-'loginBtn'
-).onclick = async () => {
-
-try{
-
-const result =
-await signInWithPopup(
-auth,
-provider
-);
-
-const user = result.user;
-
-localStorage.setItem(
-'userName',
-user.displayName
-);
-
-localStorage.setItem(
-'userEmail',
-user.email
-);
-
-localStorage.setItem(
-'userPhoto',
-user.photoURL
-);
-
-document.getElementById(
-'userName'
-).innerText =
-user.displayName;
-
-document.getElementById(
-'userEmail'
-).innerText =
-user.email;
-
-document.getElementById(
-'userPhoto'
-).src =
-user.photoURL;
-
-document.getElementById(
-'userBox'
-).classList.remove(
-'hidden'
-);
-  
-document.getElementById(
-'loginPage'
-).style.display = 'none';
-
-document.getElementById(
-'mainWebsite'
-).classList.remove(
-'hidden'
-);
-  
-addLine(
-"WELCOME " +
-user.displayName
-);
-
-speak(
-"Welcome " +
-user.displayName
-);
-
-}
-catch(error){
-
-alert(
-error.message
-);
-
-}
-
-};
-
-/* ===================================== */
-/* AUTO LOGIN */
-/* ===================================== */
-
-onAuthStateChanged(
-auth,
-(user)=>{
-
-if(user){
-
-document.getElementById(
-'userName'
-).innerText =
-user.displayName;
-
-document.getElementById(
-'userEmail'
-).innerText =
-user.email;
-
-document.getElementById(
-'userPhoto'
-).src =
-user.photoURL;
-
-document.getElementById(
-'userBox'
-).classList.remove(
-'hidden'
-);
-
-}
-
-}
-);
-
-/* ===================================== */
-/* LOGOUT */
-/* ===================================== */
-
-window.logoutUser =
-async () => {
-
 await signOut(auth);
 
 localStorage.clear();
@@ -1531,6 +1289,247 @@ YAHAN FUTURE ME ADD KARNA:
 /* SECURITY READY */
 /* ===================================== */
 
+<script type="module">
+
+/* ===================================== */
+/* FIREBASE IMPORT */
+/* ===================================== */
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+getAuth,
+
+GoogleAuthProvider,
+
+signInWithPopup,
+
+signOut,
+
+onAuthStateChanged
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+
+getAnalytics
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+/* ===================================== */
+/* FIREBASE CONFIG */
+/* ===================================== */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyDn5K-NmJBL2Q3WsX7rLoD76yncMRkTS60",
+
+authDomain: "god-omni-ai.firebaseapp.com",
+
+projectId: "god-omni-ai",
+
+storageBucket: "god-omni-ai.firebasestorage.app",
+
+messagingSenderId: "20500306900",
+
+appId: "1:20500306900:web:a7b41696a123db1764d441",
+
+measurementId: "G-2NNVLWRNXK"
+
+};
+
+/* ===================================== */
+/* FIREBASE START */
+/* ===================================== */
+
+const app =
+initializeApp(firebaseConfig);
+
+const analytics =
+getAnalytics(app);
+
+const auth =
+getAuth(app);
+
+const provider =
+new GoogleAuthProvider();
+
+/* ===================================== */
+/* TERMINAL */
+/* ===================================== */
+
+const terminal =
+document.getElementById(
+'terminal'
+);
+
+function addLine(text){
+
+terminal.innerHTML +=
+`<div>> ${text}</div>`;
+
+terminal.scrollTop =
+terminal.scrollHeight;
+
+}
+
+window.addLine = addLine;
+
+/* ===================================== */
+/* VOICE */
+/* ===================================== */
+
+window.speak = (text) => {
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.rate = 1;
+
+speech.pitch = 1;
+
+speech.volume = 1;
+
+speechSynthesis.speak(
+speech
+);
+
+};
+
+/* ===================================== */
+/* GOOGLE LOGIN */
+/* ===================================== */
+
+document.getElementById(
+'loginBtn'
+).onclick = async () => {
+
+try{
+
+const result =
+await signInWithPopup(
+auth,
+provider
+);
+
+const user = result.user;
+
+localStorage.setItem(
+'userName',
+user.displayName
+);
+
+localStorage.setItem(
+'userEmail',
+user.email
+);
+
+localStorage.setItem(
+'userPhoto',
+user.photoURL
+);
+
+document.getElementById(
+'userName'
+).innerText =
+user.displayName;
+
+document.getElementById(
+'userEmail'
+).innerText =
+user.email;
+
+document.getElementById(
+'userPhoto'
+).src =
+user.photoURL;
+
+document.getElementById(
+'userBox'
+).classList.remove(
+'hidden'
+);
+  
+document.getElementById(
+'loginPage'
+).style.display = 'none';
+
+document.getElementById(
+'mainWebsite'
+).classList.remove(
+'hidden'
+);
+  
+addLine(
+"WELCOME " +
+user.displayName
+);
+
+speak(
+"Welcome " +
+user.displayName
+);
+
+}
+catch(error){
+
+alert(
+error.message
+);
+
+}
+
+};
+
+/* ===================================== */
+/* AUTO LOGIN */
+/* ===================================== */
+
+onAuthStateChanged(
+auth,
+(user)=>{
+
+if(user){
+
+document.getElementById(
+'userName'
+).innerText =
+user.displayName;
+
+document.getElementById(
+'userEmail'
+).innerText =
+user.email;
+
+document.getElementById(
+'userPhoto'
+).src =
+user.photoURL;
+
+document.getElementById(
+'userBox'
+).classList.remove(
+'hidden'
+);
+
+}
+
+}
+);
+
+/* ===================================== */
+/* LOGOUT */
+/* ===================================== */
+
+window.logoutUser =
+async () => {  
 securityLog(
 "REAL SECURITY CORE ACTIVE"
 );
