@@ -1508,7 +1508,13 @@ securityLog(
 "REAL SECURITY CORE ACTIVE"
 );
 
-  
+await signOut(auth);
+
+localStorage.clear();
+
+location.reload();
+
+};  
 </script>
 </div>
 
