@@ -535,13 +535,12 @@ placeholder="Ask GOD-OMNI AI..."
 
 <script>
 
-await signOut(auth);
+(async () => {
+    await signOut(auth);
+    localStorage.clear();
+    location.reload();
+})();
 
-localStorage.clear();
-
-location.reload();
-
-};
 
 /* ===================================== */
 /* PREMIUM FEATURE SYSTEM */
